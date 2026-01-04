@@ -29,26 +29,21 @@ export default function Navbar() {
         }}>
             <div className="container" style={{
                 position: 'relative',
-                display: 'flex',
-                justifyContent: 'space-between',
+                display: 'grid',
+                gridTemplateColumns: '1fr auto 1fr',
                 alignItems: 'center',
-                flexDirection: 'row' // Ensure row layout on mobile
+                gap: '1.5rem' // Consistent spacing around the logo
             }}>
 
-                {/* Left Links */}
-                <div style={{ display: 'flex' }}>
+                {/* Left Links - Aligned towards center */}
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <Link href="#about" style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>
                         About
                     </Link>
                 </div>
 
-                {/* Centered Logo */}
-                <div style={{
-                    position: 'absolute',
-                    left: '50%',
-                    top: '50%',
-                    transform: 'translate(-50%, -50%)'
-                }}>
+                {/* Centered Logo - No longer absolute */}
+                <div style={{ textAlign: 'center' }}>
                     <Link href="/" style={{
                         fontFamily: 'var(--font-serif)',
                         fontSize: '2rem',
@@ -60,8 +55,8 @@ export default function Navbar() {
                     </Link>
                 </div>
 
-                {/* Right Links */}
-                <div style={{ display: 'flex' }}>
+                {/* Right Links - Aligned towards center */}
+                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
                     <Link href="#services" style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>
                         Services
                     </Link>
