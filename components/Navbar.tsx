@@ -27,15 +27,18 @@ export default function Navbar() {
             transition: 'all 0.3s ease',
             color: scrolled ? '#1a1a1a' : '#fff'
         }}>
-            <div className="container" style={{ position: 'relative', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div className="container" style={{
+                position: 'relative',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexDirection: 'row' // Ensure row layout on mobile
+            }}>
 
                 {/* Left Links */}
-                <div style={{ display: 'flex', gap: '2.5rem' }}>
+                <div style={{ display: 'flex' }}>
                     <Link href="#about" style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>
                         About
-                    </Link>
-                    <Link href="#services" style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>
-                        Services
                     </Link>
                 </div>
 
@@ -58,12 +61,9 @@ export default function Navbar() {
                 </div>
 
                 {/* Right Links */}
-                <div style={{ display: 'flex', gap: '2.5rem' }}>
-                    <Link href="#portfolio" style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>
-                        Portfolio
-                    </Link>
-                    <Link href="#contact" style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>
-                        Contact
+                <div style={{ display: 'flex' }}>
+                    <Link href="#services" style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px' }}>
+                        Services
                     </Link>
                 </div>
 

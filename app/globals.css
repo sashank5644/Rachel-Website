@@ -128,7 +128,7 @@ button {
 
 @media (max-width: 768px) {
   .navbar .container {
-    flex-direction: column;
+    /* flex-direction: column;  Remove this to keep row layout */
     gap: 1rem;
   }
 
