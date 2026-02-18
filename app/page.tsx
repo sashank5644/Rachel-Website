@@ -1,8 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
-import Services from "@/components/Services";
+import Gallery from "@/components/Gallery";
+import Reviews from "@/components/Reviews";
+import IntakeForm from "@/components/IntakeForm";
 import LocationSection from "@/components/LocationSection";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,13 +14,15 @@ export default function Home() {
       <Hero />
 
       <Section
+        id="about"
         title="Our Mission"
         subtitle="serving beauty & confidence"
-        content="We are taking modern beauty to a whole new level! Rachel's mission is to connect her clients with the art of talented beauty professionals to provide luxury on-site beauty services to elevate your beauty and confidence."
+        content="My goal as a luxury stylist is to always provide elevated customized services to suit each and every individual client's needs. I provide the latest and most up to date techniques for all my clients. Integrity, passion and my absolute love for hair are the driving forces that motivate me daily to strive for excellence in each and every service I provide my clients. The health of my clients hair is my top priority at all times as well as educating my clients about home care and proper tones and hairstyles that are customized to fit their life style. Communication and integrity are the foundations I have built my business and the elements that are always present in my services and relationships with my clients day to day. My absolute greatest hope is to always make my clients feel incredibly beautiful, confident, and know that they have their hairstylist for life in me."
         imageSrc="/images/rachel-1.jpg"
         imageAlt="Mission Statement Image"
         reverse={false}
         isArch={true}
+        offset="up"
       />
 
       <Section
@@ -29,30 +34,48 @@ export default function Home() {
         reverse={true}
         ctaText="View Portfolio"
         ctaLink="#portfolio"
+        offset="down"
       />
 
       <Section
-        title="Signature Services"
-        subtitle="luxury experience"
-        content="From lived-in balayage to precision bobs, my services are designed to enhance your natural beauty. I use only premium, eco-friendly products to ensure the health of your hair."
+        id="services"
+        title="Our Services"
+        subtitle="Luxury Experience"
+        content="Explore our full menu of hair extensions, coloring, and styling services designed to enhance your natural beauty."
         imageSrc="/images/rachel-2.jpg"
-        imageAlt="Hair Service"
+        imageAlt="Services Image"
         reverse={false}
-        ctaText="See Menu"
-        ctaLink="#services"
+        ctaText="View Service Menu & Book"
+        ctaLink="https://www.hairartistrybyrachelsalem.com"
+        offset="up"
       />
 
-      <Services />
+      <Gallery />
+
+      <Reviews />
+
+      <div id="intake-form">
+        <IntakeForm />
+      </div>
 
       <LocationSection />
 
-      <footer id="contact" style={{ backgroundColor: '#2d2d2d', color: '#fff', padding: '5rem 0', textAlign: 'center' }}>
+      <footer id="contact" style={{ backgroundColor: '#3D3229', color: '#fff', padding: '5rem 0', textAlign: 'center' }}>
         <div className="container">
+          <div style={{ marginBottom: '2rem' }}>
+            <Image
+              src="/images/hairapist-logo.png"
+              alt="The Hairapist Logo"
+              width={80}
+              height={100}
+              style={{ objectFit: 'contain', borderRadius: '8px' }}
+            />
+          </div>
           <h2 style={{ color: '#fff', marginBottom: '2rem' }}>Get In Touch</h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '2rem' }}>
             Ready for your transformation? Book your appointment today.
           </p>
-          <a href="mailto:hello@rachelhair.com" className="btn" style={{ backgroundColor: '#fff', color: '#333' }}>
+          <a href="mailto:hello@rachelhair.com" className="btn" style={{ backgroundColor: '#C9A88C', color: '#fff', borderColor: '#C9A88C' }}>
             Email Me
           </a>
           <div style={{ marginTop: '3rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.4)' }}>

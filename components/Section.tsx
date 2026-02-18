@@ -10,7 +10,8 @@ interface SectionProps {
     reverse?: boolean;
     ctaText?: string;
     ctaLink?: string;
-    isArch?: boolean; // New prop for the arch shape
+    isArch?: boolean;
+    offset?: 'up' | 'down';
 }
 
 export default function Section({
@@ -23,73 +24,45 @@ export default function Section({
     ctaText,
     ctaLink,
     isArch = false,
-}: SectionProps) {
-    // Style for the text block to always be centered
-    const textStyle = {
-        textAlign: 'center' as const,
-        padding: '0 2rem',
-        display: 'flex',
-        flexDirection: 'column' as const,
-        alignItems: 'center',
-        justifyContent: 'center'
-    };
-
+    offset,
+    id,
+}: SectionProps & { id?: string }) {
     return (
-        <section className="section">
-            {/* 
-                We use the 'reverse' logic to swap columns. 
-                Standard: Image Left [1], Text Right [2]
-                Reverse: Text Left [1], Image Right [2]
-            */}
-            <div className="container split-section">
-                {/* Image Wrapper */}
-                <div
-                    className={`split-image-wrapper ${isArch ? 'arch-image' : ''}`}
-                    style={{ order: reverse ? 2 : 1 }}
-                >
-                    <Image
-                        src={imageSrc}
-                        alt={imageAlt}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        sizes="(max-width: 900px) 100vw, 50vw"
-                    />
-                </div>
+        <section id={id} className="section">
+            <div className="container">
+                <div className={`section-card ${reverse ? 'section-card-reverse' : ''}`}>
+                    {/* Image Side */}
+                    <div className={`section-card-image ${isArch ? 'arch-image' : ''} ${offset ? `image-offset-${offset}` : ''}`}>
+                        <Image
+                            src={imageSrc}
+                            alt={imageAlt}
+                            fill
+                            style={{ objectFit: 'cover' }}
+                            sizes="(max-width: 900px) 100vw, 50vw"
+                        />
+                    </div>
 
-                {/* Content Wrapper */}
-                <div className="split-content" style={{ ...textStyle, order: reverse ? 1 : 2 }}>
-                    {title && (
-                        <h2 style={{
-                            fontSize: '3rem',
-                            marginBottom: '0.5rem',
-                            letterSpacing: '0.05em',
-                            textTransform: 'uppercase'
-                        }}>
-                            {title}
-                        </h2>
-                    )}
-                    {subtitle && (
-                        <p className="script-text">
-                            {subtitle}
+                    {/* Content Side */}
+                    <div className="section-card-content">
+                        {title && (
+                            <h2 className="section-card-title">
+                                {title}
+                            </h2>
+                        )}
+                        {subtitle && (
+                            <p className="section-card-subtitle script-text">
+                                {subtitle}
+                            </p>
+                        )}
+                        <p className="section-card-text">
+                            {content}
                         </p>
-                    )}
-
-                    <p style={{
-                        fontSize: '1rem',
-                        marginBottom: '2rem',
-                        color: 'rgba(0,0,0,0.7)',
-                        maxWidth: '500px',
-                        marginLeft: 'auto',
-                        marginRight: 'auto',
-                        marginTop: '1.5rem'
-                    }}>
-                        {content}
-                    </p>
-                    {ctaText && ctaLink && (
-                        <Link href={ctaLink} className="btn">
-                            {ctaText}
-                        </Link>
-                    )}
+                        {ctaText && ctaLink && (
+                            <Link href={ctaLink} className="section-card-cta">
+                                {ctaText}
+                            </Link>
+                        )}
+                    </div>
                 </div>
             </div>
         </section>

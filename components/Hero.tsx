@@ -98,9 +98,7 @@ export default function Hero() {
                 </h1>
 
                 <Link
-                    href="https://www.hairartistrybyrachelsalem.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#services"
                     className="btn"
                     style={{
                         backgroundColor: '#fff',
