@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Prata&family=Pinyon+Script&display=swap');
 
 :root {
   --background: #F5EDE3;
@@ -8,9 +8,12 @@
   --accent: #C9A88C;
   --almond-light: #F9F1E8;
   --almond-dark: #3D3229;
-  --font-serif: 'Playfair Display', serif;
+  --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Lato', sans-serif;
   --font-script: 'Pinyon Script', cursive;
+  --font-bodoni: 'Bodoni Moda', serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-prata: 'Prata', serif;
 }
 
 * {
@@ -1042,18 +1045,38 @@ button {
 }
 
 .hours-grid {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 0.8rem;
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 1.05rem;
   color: #555;
   margin-top: 2rem;
 }
 
-.hours-grid span:first-child {
-  font-weight: 700;
-  color: var(--primary);
+.hour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted rgba(201, 168, 140, 0.4);
 }
+
+.hour-row:last-child {
+  border-bottom: none;
+}
+
+.hour-day {
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+.hour-time {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
 
 .map-frame {
   width: 100%;

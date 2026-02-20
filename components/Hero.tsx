@@ -5,11 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const HERO_IMAGES = [
-    '/images/rachel-1.jpg',
-    '/images/rachel-2.jpg',
-    '/images/rachel-3.jpg',
-    '/images/rachel-4.jpg',
-    '/images/rachel-5.jpg',
+    '/images/media__1771616269778.jpg',
+    '/images/media__1771616269903.jpg',
+    '/images/media__1771616269966.jpg',
+    '/images/media__1771616270023.jpg',
+    '/images/media__1771616279125.jpg',
+    '/images/media__1771616369029.jpg',
+    '/images/media__1771617879734.jpg',
+    '/images/media__1771619622538.jpg',
 ];
 
 export default function Hero() {
@@ -86,12 +89,12 @@ export default function Hero() {
                     Independent Hairstylist
                 </span>
                 <h1 style={{
-                    fontFamily: 'var(--font-serif)',
+                    fontFamily: 'var(--font-parisienne)',
                     color: '#fff',
-                    fontSize: 'clamp(3.5rem, 8vw, 6rem)',
-                    lineHeight: '1.1',
-                    marginBottom: '2.5rem',
-                    textTransform: 'uppercase',
+                    fontSize: 'clamp(4.5rem, 10vw, 8rem)',
+                    lineHeight: '1',
+                    marginBottom: '2rem',
+                    textTransform: 'capitalize',
                     textShadow: '0 2px 4px rgba(0,0,0,0.3)'
                 }}>
                     The Luxury<br />Beauty Experience

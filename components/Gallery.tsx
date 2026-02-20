@@ -5,12 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 const galleryImages = [
-    { src: "/images/rachel-1.jpg", alt: "Hair styling work" },
-    { src: "/images/rachel-2.jpg", alt: "Hair coloring transformation" },
-    { src: "/images/rachel-3.jpg", alt: "Luxury hair extensions" },
-    { src: "/images/rachel-4.jpg", alt: "Bridal hairstyling" },
-    { src: "/images/rachel-5.jpg", alt: "Balayage finish" },
-    { src: "/images/uploaded_image_0_1767484102585.jpg", alt: "Client transformation" },
+    { src: "/images/media__1771618829728.jpg", alt: "Gorgeous hair coloring" },
+    { src: "/images/media__1771618876612.jpg", alt: "Beautiful hair extensions" },
+    { src: "/images/media__1771618884293.jpg", alt: "Client transformation" },
+    { src: "/images/media__1771618889464.jpg", alt: "Beautiful hair styling" },
+    { src: "/images/media__1771619434565.jpg", alt: "Beautiful highlighted waves" },
+    { src: "/images/media__1771619277591.jpg", alt: "Stylist showcasing hair extensions" },
 ];
 
 export default function Gallery() {
@@ -52,7 +52,7 @@ export default function Gallery() {
                     <div className="ig-profile-left">
                         <div className="ig-avatar">
                             <Image
-                                src="/images/rachel-3.jpg"
+                                src="/images/media__1771617948513.jpg"
                                 alt="Rachel Marconi"
                                 width={72}
                                 height={72}
