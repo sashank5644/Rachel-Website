@@ -341,7 +341,7 @@ button {
   transform: translateX(40px);
 }
 
-/* Elegant horizontal line dividers */
+/* Elegant animated fading lines */
 .section-with-lines {
   position: relative;
 }
@@ -350,8 +350,9 @@ button {
 .section-with-lines::after {
   content: '';
   display: block;
-  height: 1px;
-  background: #1a1a1a;
+  height: 2px;
+  background-color: #1a1a1a;
+  opacity: 0.6;
 }
 
 .section-with-lines::before {
@@ -362,20 +363,46 @@ button {
   margin-top: 3.5rem;
 }
 
-/* Left-aligned: line draws from left edge to right edge of card */
+/* Left-aligned: line originates from the left and fades out to the right */
 .section-align-left::before,
 .section-align-left::after {
-  width: 80%;
+  background: linear-gradient(90deg, #1a1a1a, transparent);
   margin-left: 0;
   margin-right: auto;
+  animation: slideInFromLeft 1.5s ease-out forwards;
 }
 
-/* Right-aligned: line draws from left edge of card to right edge */
+/* Right-aligned: line originates from the right and fades out to the left */
 .section-align-right::before,
 .section-align-right::after {
-  width: 80%;
+  background: linear-gradient(-90deg, #1a1a1a, transparent);
   margin-left: auto;
   margin-right: 0;
+  animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 80%;
+    opacity: 1;
+  }
 }
 
 .section-card-image {
@@ -505,7 +532,22 @@ button {
 
   .section-with-lines::before,
   .section-with-lines::after {
-    width: 40%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background: linear-gradient(90deg, transparent, #1a1a1a, transparent) !important;
+    animation: fadeAndExpandCenter 1.5s ease-out forwards !important;
+  }
+
+  @keyframes fadeAndExpandCenter {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+
+    100% {
+      width: 60%;
+      opacity: 1;
+    }
   }
 
   .section-with-lines::before {
