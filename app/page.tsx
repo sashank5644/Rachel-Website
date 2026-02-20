@@ -44,7 +44,7 @@ export default function Home() {
         title="Our Services"
         subtitle="Luxury Experience"
         content="Explore our full menu of hair extensions, coloring, and styling services designed to enhance your natural beauty."
-        imageSrc="/images/rachel-2.jpg"
+        imageSrc="/images/media__1771624309186.jpg"
         imageAlt="Services Image"
         reverse={false}
         ctaText="View Service Menu & Book"
