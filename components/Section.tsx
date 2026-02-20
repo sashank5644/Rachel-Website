@@ -12,6 +12,7 @@ interface SectionProps {
     ctaLink?: string;
     isArch?: boolean;
     offset?: 'up' | 'down';
+    align?: 'left' | 'right';
 }
 
 export default function Section({
@@ -25,12 +26,16 @@ export default function Section({
     ctaLink,
     isArch = false,
     offset,
+    align,
     id,
 }: SectionProps & { id?: string }) {
+    const alignClass = align ? `section-card-align-${align}` : '';
+    const sectionAlignClass = align ? `section-align-${align}` : '';
+
     return (
-        <section id={id} className="section">
+        <section id={id} className={`section section-with-lines ${sectionAlignClass}`}>
             <div className="container">
-                <div className={`section-card ${reverse ? 'section-card-reverse' : ''}`}>
+                <div className={`section-card ${reverse ? 'section-card-reverse' : ''} ${alignClass}`}>
                     {/* Image Side */}
                     <div className={`section-card-image ${isArch ? 'arch-image' : ''} ${offset ? `image-offset-${offset}` : ''}`}>
                         <Image

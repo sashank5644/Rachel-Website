@@ -23,11 +23,12 @@ export default function Home() {
         reverse={false}
         isArch={true}
         offset="up"
+        align="left"
       />
 
       <Section
-        title="The Boss"
-        subtitle="Rachel Stylist"
+        title="Rachel Marconi"
+        subtitle="Hair Stylist"
         content="Rachel is the founder and creative force. With over 10 years of experience in the industry, Rachel has honed her skills in top salons across the country. Passionate about ongoing education, she stays ahead of trends to bring you the best in hair care."
         imageSrc="/images/rachel-3.jpg"
         imageAlt="Rachel Portrait"
@@ -35,6 +36,7 @@ export default function Home() {
         ctaText="View Portfolio"
         ctaLink="#portfolio"
         offset="down"
+        align="right"
       />
 
       <Section
@@ -48,6 +50,7 @@ export default function Home() {
         ctaText="View Service Menu & Book"
         ctaLink="https://www.hairartistrybyrachelsalem.com"
         offset="up"
+        align="left"
       />
 
       <Gallery />
